@@ -44,7 +44,7 @@ const Header = ({
       label="Code"
       icon={<GitHubIcon />}
       target="_blank"
-      href="https://github.com/peterhalasz/smartsneks"
+      href="https://github.com/peterhalasz/snakesandbox"
     ></BottomNavigationAction>
   </BottomNavigation>
 );

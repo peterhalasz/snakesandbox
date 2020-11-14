@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import Output from "./components/Output";
 import BottomNavigation from "./components/BottomNavigation";
 import InfoModal from "../InfoModal/index";
+import ErrorDialog from "../ErrorSnackbar/index";
 
 import dynamic from "next/dynamic";
 
@@ -57,12 +58,14 @@ const Main = ({
         />
       </Grid>
     </Grid>
-
     <InfoModal
       isInfoModalOpen={isInfoModalOpen}
       handleCloseModal={handleCloseModal}
     />
-
+    <ErrorDialog
+        open={error}
+        errorMessage={errorMessage}
+    />
     <Backdrop open={isRunning} style={{ zIndex: 9999 }} onClick={onClickStop}>
       <Output canvasRef={canvasRef} />
     </Backdrop>
