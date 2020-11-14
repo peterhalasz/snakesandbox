@@ -72,6 +72,7 @@ export default class App extends React.Component<{}, State> {
   }
 
   onClickStart = () => {
+    this.handleCloseModal();
     const { code } = this.state;
 
     try {
