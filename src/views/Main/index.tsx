@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 import Backdrop from "@material-ui/core/Backdrop";
 import Grid from "@material-ui/core/Grid";
@@ -62,10 +62,7 @@ const Main = ({
       isInfoModalOpen={isInfoModalOpen}
       handleCloseModal={handleCloseModal}
     />
-    <ErrorDialog
-        open={error}
-        errorMessage={errorMessage}
-    />
+    <ErrorDialog open={error} errorMessage={errorMessage} />
     <Backdrop open={isRunning} style={{ zIndex: 9999 }} onClick={onClickStop}>
       <Output canvasRef={canvasRef} />
     </Backdrop>

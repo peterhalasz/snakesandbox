@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 import demoCode from "./demo-code";
 import EngineImpl, { Engine } from "./engine";

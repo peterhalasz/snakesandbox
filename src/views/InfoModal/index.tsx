@@ -1,8 +1,8 @@
-import * as React from "react";
+import React from "react";
 
 import Dialog from "@material-ui/core/Dialog";
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
 interface Props {
@@ -10,15 +10,21 @@ interface Props {
   handleCloseModal: () => void;
 }
 
-const InfoDialog = ({ isInfoModalOpen, handleCloseModal }: Props) => (
-  <Dialog open={isInfoModalOpen} onClose={handleCloseModal}>
-    <DialogTitle>Hey there!</DialogTitle>
-    <DialogContent>
+export default function InfoDialog({
+  isInfoModalOpen,
+  handleCloseModal,
+}: Props) {
+  return (
+    <Dialog open={isInfoModalOpen} onClose={handleCloseModal}>
+      <DialogTitle>Hey there!</DialogTitle>
+      <DialogContent>
         <DialogContentText>
-          To get started, click start to see your snake using
-          the code in the editor to move around and grab some food.
+          To get started, click start to see your snake using the code in the
+          editor to move around and grab some food.
         </DialogContentText>
-        <DialogContentText>I'm sure you can do better than that though.</DialogContentText>
+        <DialogContentText>
+          I'm sure you can do better than that though.
+        </DialogContentText>
         <DialogContentText>
           To implement your own snake brain in Javascript, simply change the{" "}
           <code>moveSnake(snake, food)</code> function.
@@ -61,8 +67,7 @@ const InfoDialog = ({ isInfoModalOpen, handleCloseModal }: Props) => (
           </code>
         </DialogContentText>
         <DialogContentText>Have fun!</DialogContentText>
-    </DialogContent>
-  </Dialog>
-);
-
-export default InfoDialog;
+      </DialogContent>
+    </Dialog>
+  );
+}
