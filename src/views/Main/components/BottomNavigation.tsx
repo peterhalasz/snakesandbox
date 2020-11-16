@@ -17,36 +17,36 @@ interface Props {
   onClickStop: () => void;
 }
 
-const Header = ({
+export default function Header({
   onResetCode,
   handleOpenModal,
   onClickStart,
   isRunning,
   onClickStop,
-}: Props) => (
-  <BottomNavigation>
-    <BottomNavigationAction
-      label={isRunning ? "STOP" : "START"}
-      icon={!isRunning ? <PlayCircleFilledWhiteIcon /> : <StopIcon />}
-      onClick={isRunning ? onClickStop : onClickStart}
-    ></BottomNavigationAction>
-    <BottomNavigationAction
-      label="Help"
-      icon={<HelpIcon />}
-      onClick={handleOpenModal}
-    ></BottomNavigationAction>
-    <BottomNavigationAction
-      label="Reset"
-      icon={<RotateLeftIcon />}
-      onClick={onResetCode}
-    ></BottomNavigationAction>
-    <BottomNavigationAction
-      label="Code"
-      icon={<GitHubIcon />}
-      target="_blank"
-      href="https://github.com/peterhalasz/snakesandbox"
-    ></BottomNavigationAction>
-  </BottomNavigation>
-);
-
-export default Header;
+}: Props) {
+  return (
+    <BottomNavigation>
+      <BottomNavigationAction
+        label={isRunning ? "STOP" : "START"}
+        icon={!isRunning ? <PlayCircleFilledWhiteIcon /> : <StopIcon />}
+        onClick={isRunning ? onClickStop : onClickStart}
+      ></BottomNavigationAction>
+      <BottomNavigationAction
+        label="Help"
+        icon={<HelpIcon />}
+        onClick={handleOpenModal}
+      ></BottomNavigationAction>
+      <BottomNavigationAction
+        label="Reset"
+        icon={<RotateLeftIcon />}
+        onClick={onResetCode}
+      ></BottomNavigationAction>
+      <BottomNavigationAction
+        label="Code"
+        icon={<GitHubIcon />}
+        target="_blank"
+        href="https://github.com/peterhalasz/snakesandbox"
+      ></BottomNavigationAction>
+    </BottomNavigation>
+  );
+}
