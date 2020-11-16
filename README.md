@@ -1,30 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# snakesandbox
 
-## Getting Started
+Write your own snake brain.
 
-First, run the development server:
+## Installation
 
-```bash
-npm run dev
-# or
+```
+yarn install
+```
+
+## Running the app
+
+```
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# How to
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+To implement your own snake brain in Javascript, simply change the `moveSnake(snake, food)` function.
 
-## Learn More
+The function receives two arguments each time the snake faces the
+decision, where to go next.
 
-To learn more about Next.js, take a look at the following resources:
+The first argument `snake` is a representation of the snake's state. It's a simple array containing the coordinates of the rectangles
+building up the snake. For example, before making the first move the function receives this as the first argument:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+[{"x":5,"y":1},{"x":4,"y":1},{"x":3,"y":1},{"x":2 "y":1},{"x":1,"y":1}]
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The second argument (food) is a representation of the next food our
+snake should eat. It's an object containing the coordinates of the
+food on the map. For example: `{'{"x":13,"y":15}'}`.
 
-## Deploy on Vercel
+Last but not least, the return value. It's important that the `moveSnake` funcation returns a valid direction for the snake before making a move. Make sure that function returns on of the following strings on each invocation: `"left"|"right"|"up"|"down"`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+In order for the parser to work correctly, please don't change the class declaration and the return value at the end of the block.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+class SnakeBrain {
+    moveSnake(snake, food) {
+        ...
+    }
+}
+
+return new SnakeBrain();
+```
+
+# Deployment
+
+The application is currently deployed on [vercel](https://vercel.com/).
+
+https://snakesandbox.vercel.app/
+
+# Contribution
+
+Yes
